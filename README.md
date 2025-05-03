@@ -2,6 +2,21 @@
 
 読書記録管理アプリケーション - Next.js 14 + TypeScript + Tailwind CSS で構築されたシンプルな読書管理システム
 
+## 開発環境の確認
+
+開発環境が正しくセットアップされているか確認するには、以下のコマンドを実行してください：
+
+```bash
+./scripts/verify-environment.sh
+```
+
+このスクリプトは以下の項目を確認します：
+- 必要なコマンド（Node.js、npm、Git）のインストール状況
+- npmパッケージの依存関係
+- 環境変数ファイル（.env）の存在
+- Prismaのセットアップ状況
+- Next.js開発サーバーの起動テスト
+
 ## Getting Started
 
 First, run the development server:
