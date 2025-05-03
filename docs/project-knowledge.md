@@ -41,6 +41,12 @@
 - PRは1つのチェックボックス（タスク）に対応すること
 - 最後のタスクのPRには「Closes #n」を含めてIssueの自動クローズを設定すること
 
+## ブランチ管理のルール
+- 作業開始前に必ずmainブランチをcheckoutし、最新の状態にする (`git checkout main && git pull origin main`)
+- mainブランチから新しいブランチを作成する (`git checkout -b feature/...`)
+- ブランチ名はConventional Branchに従う
+- 作業完了後、PRを作成する前にmainブランチの最新の変更を取り込む
+
 ## git branch のルール
 - Conventional Branch に従うこと
  - https://conventional-branch.github.io/
