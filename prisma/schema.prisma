@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"  // 開発環境用
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  books     Book[]
+  createdAt DateTime @default(now())
+}
+
+model Book {
+  id            String     @id @default(cuid())
+  title         String
+  author        String
+  pageCount     Int?
+  coverImageUrl String?
+  status        BookStatus @default(UNREAD)
+  user          User       @relation(fields: [userId], references: [id])
+  userId        String
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+}
+
+enum BookStatus {
+  UNREAD
+  READING
+  COMPLETED
+}
