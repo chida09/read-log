@@ -17,6 +17,20 @@
 - Prismaのセットアップ状況
 - Next.js開発サーバーの起動テスト
 
+## スタイリング
+
+このプロジェクトではTailwind CSS v4を使用しています。詳細な設定については [TailwindCSSセットアップガイド](./docs/tailwind-setup.md) を参照してください。
+
+### Tailwind CSSの動作確認
+
+Tailwind CSSが正しく設定されているか確認するには：
+
+```bash
+npm run dev
+```
+
+ブラウザで [http://localhost:3333/tailwind-check](http://localhost:3333/tailwind-check) にアクセスしてください。
+
 ## Getting Started
 
 First, run the development server:
