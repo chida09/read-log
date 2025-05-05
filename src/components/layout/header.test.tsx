@@ -1,14 +1,16 @@
-import { render, screen } from '@testing-library/react'
+import React from 'react'
+import { render } from '@testing-library/react'
+import '@testing-library/jest-dom'
 import { Header } from './header'
 
 describe('Header', () => {
   it('ロゴテキストが表示される', () => {
-    render(<Header />)
-    expect(screen.getByText('BookShelf')).toBeInTheDocument()
+    const { getByText } = render(<Header />)
+    expect(getByText('BookShelf')).toBeInTheDocument()
   })
 
   it('ログインリンクが表示される', () => {
-    render(<Header />)
-    expect(screen.getByText('ログイン')).toBeInTheDocument()
+    const { getByText } = render(<Header />)
+    expect(getByText('ログイン')).toBeInTheDocument()
   })
 })

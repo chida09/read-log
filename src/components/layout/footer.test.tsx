@@ -1,10 +1,12 @@
-import { render, screen } from '@testing-library/react'
+import React from 'react'
+import { render } from '@testing-library/react'
+import '@testing-library/jest-dom'
 import { Footer } from './footer'
 
 describe('Footer', () => {
   it('コピーライトが表示される', () => {
-    render(<Footer />)
+    const { getByText } = render(<Footer />)
     const currentYear = new Date().getFullYear()
-    expect(screen.getByText(`© ${currentYear} BookShelf. All rights reserved.`)).toBeInTheDocument()
+    expect(getByText(`© ${currentYear} BookShelf. All rights reserved.`)).toBeInTheDocument()
   })
 })
